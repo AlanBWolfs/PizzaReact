@@ -183,3 +183,15 @@ body {
   max-height: 15rem;
   border: #252525 solid .5rem;
 }
+
+.moviesContainer p{
+  margin: 1rem;
+}
+
+.movieButtons{
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  margin-top: 1rem;
+  gap: .5rem;
+}
