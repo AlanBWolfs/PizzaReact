@@ -1,61 +1,58 @@
-import { useState, useEffect } from "react";
-export default function Movies(){
+import { useState } from "react";
+import style from './styles/pizza-style.module.css'
+export default function SwapMovies(){
    
-    //! Creando estado con la información de las Pizzas
-    const [movies,setMovies] = useState([
-  {
-    name: "Gatacca",
+const movies = [
+  { name: "Gatacca",
     releaseYear: "1998",
     genre: "Ciencia ficción, distopía",
     synopsis: "Un hombre logra su sueño en una sociedad construida en contra suyo",
     photoName: "movies/Gattaca.jpg"
+    
   },
-  {
-    name: "El planeta del tesoro",
+  { name: "El planeta del tesoro",
     releaseYear: "2002",
     genre: "Ciencia ficción, aventura",
     synopsis: "Un chico descubre de lo que es capaz al embarcarse en una aventura a otro planeta",
     photoName: "movies/TreasureP.webp"
+    
   },
-  {
-    name: "Wolf Children",
+  { name: "Wolf Children",
     releaseYear: "2012",
     genre: "Fantasía, Drama",
     synopsis: "Una chica cría a un par de niños capaces de transformarse en lobo",
     photoName: "movies/WolfC.webp"
+    
   },
-  {
-    name: "Jurassic Park",
+  { name: "Jurassic Park",
     releaseYear: "1993",
     genre: "Ciencia ficción, acción",
     synopsis: "Un experimento genético logra traer de vuelta a los dinosaurios y termina en un desastre",
     photoName: "movies/JurassicP.jpg"
+    
   },
-])
-//! Fin del estado
+];
 
-useEffect(()=>{
-    const data = localStorage.getItem("movies");
-    if (data) setMovies(JSON.parse(data));
-},[])
-//! Fijar los datos o actualizarlos
-useEffect(()=>localStorage.setItem("movies",JSON.stringify(movies)),[movies]);
+const[count,setCount] = useState(0);
+const increment = ()=>setCount(count+1);
+const decrement = ()=>setCount(count-1);
 
-//! Función para borrar pizzas y actualizar el estado
-const swapMovie = (movieName) => setMovies(prev=>prev.filter((pizza)=>pizza.name!==pizzaName));
-    return(
-        <main className="menu">
-            <h2>Mis películas favoritas</h2>   
-            <>
-                <ul className="pizzas">
-                    {pizzas.map((pizza)=>{
-                        console.log(pizza);
-                        return(
-                            <Pizza pizzaObject={pizza} key={pizza.name} onDelete={deletePizza}/>
-                        )
-                    })}
-                </ul>
-            </>
-        </main>
-    );
+return (
+    <div className="moviesContainer">
+      <p>Comparto una selección de algunas de mis películas favoritas</p>
+      <br />
+      <h1>{movies[count].name}</h1>
+      <br />
+      <section>
+      <img src={movies[count].photoName} alt={movies[count].name} />
+      <p>{movies[count].synopsis}</p>
+      </section>
+      <br />
+      <button onClick={decrement} disabled={count === 0}>Anterior</button>
+      <button onClick={increment} disabled={count === movies.length - 1}>Siguiente</button>
+    </div>
+  );
 }
+
+
+

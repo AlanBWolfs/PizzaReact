@@ -1,5 +1,6 @@
 import NavBar from "../components/Navbar"
 import Footer from "../components/Footer"
+import SwapMovies from "../components/Movies"
 
 export default function Card(){
     // Creando objeto de estilos para el componente
@@ -18,6 +19,7 @@ return(
                     <a href="https://github.com/AlanBWolfs"><img src="https://img.icons8.com/m_rounded/512/228BE6/github.png" alt="GitHub"  className="networkImg"/></a>
                     <a href="https://www.linkedin.com/in/alan-bañuelos-gonzález-b65906257/"><img src="https://www.svgrepo.com/show/157006/linkedin.svg" className="networkImg"/></a>
                 </div>
+                <SwapMovies/>
             </div>
         </div>
         <Footer/>

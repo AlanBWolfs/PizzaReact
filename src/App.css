@@ -165,3 +165,21 @@ body {
   line-height: 1.6;
   max-width: 35rem;
 }
+
+/*********************/
+
+.moviesContainer{
+  margin: 2rem;
+  max-width: 32rem ;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.moviesContainer section{
+  display: flex;
+}
+
+.moviesContainer img{
+  max-height: 15rem;
+  border: #252525 solid .5rem;
+}
