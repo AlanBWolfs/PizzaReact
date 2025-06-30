@@ -1,5 +1,4 @@
 import { useState } from "react";
-import style from './styles/pizza-style.module.css'
 export default function SwapMovies(){
    
 const movies = [

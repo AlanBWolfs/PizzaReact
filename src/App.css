@@ -195,3 +195,14 @@ body {
   margin-top: 1rem;
   gap: .5rem;
 }
+
+.moviesContainer button{
+  background-color: #91731a;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.moviesContainer button:hover {
+  background-color: #000000;
+}
